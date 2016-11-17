@@ -1,0 +1,1231 @@
+ARM Linker, RVCT4.0 [Build 728] [Standard]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.DrvSYS_Delay) refers to system_m051series.o(.data) for CyclesPerUs
+    main.o(i.SYS_Init) refers to clk.o(i.CLK_WaitClockReady) for CLK_WaitClockReady
+    main.o(i.SYS_Init) refers to system_m051series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    main.o(i.UART0_Init) refers to sys.o(i.SYS_ResetModule) for SYS_ResetModule
+    main.o(i.UART0_Init) refers to uart.o(i.UART_Open) for UART_Open
+    main.o(i.main) refers to main.o(i.SYS_Init) for SYS_Init
+    main.o(i.main) refers to display.o(i.RotaryEncoderHWinit) for RotaryEncoderHWinit
+    main.o(i.main) refers to display.o(i.DisplayHWInit) for DisplayHWInit
+    main.o(i.main) refers to display.o(i.TimeInit) for TimeInit
+    main.o(i.main) refers to mb.o(i.eMBInit) for eMBInit
+    main.o(i.main) refers to mb.o(i.eMBEnable) for eMBEnable
+    main.o(i.main) refers to display.o(i.DisplayScan) for DisplayScan
+    main.o(i.main) refers to display.o(i.CountPoll) for CountPoll
+    main.o(i.main) refers to display.o(i.BuzzePoll) for BuzzePoll
+    main.o(i.main) refers to mb.o(i.eMBPoll) for eMBPoll
+    main.o(i.main) refers to main.o(.data) for SlaveAddr
+    portevent.o(i.xMBPortEventGet) refers to portevent.o(.data) for .data
+    portevent.o(i.xMBPortEventInit) refers to portevent.o(.data) for .data
+    portevent.o(i.xMBPortEventPost) refers to portevent.o(.data) for .data
+    portserial.o(i.UART0_IRQHandler) refers to portserial.o(i.prvvUARTRxISR) for prvvUARTRxISR
+    portserial.o(i.UART0_IRQHandler) refers to portserial.o(i.prvvUARTTxReadyISR) for prvvUARTTxReadyISR
+    portserial.o(i.prvvUARTRxISR) refers to mb.o(.data) for pxMBFrameCBByteReceived
+    portserial.o(i.prvvUARTTxReadyISR) refers to mb.o(.data) for pxMBFrameCBTransmitterEmpty
+    portserial.o(i.xMBPortSerialInit) refers to sys.o(i.SYS_ResetModule) for SYS_ResetModule
+    portserial.o(i.xMBPortSerialInit) refers to clk.o(i.CLK_SetModuleClock) for CLK_SetModuleClock
+    portserial.o(i.xMBPortSerialInit) refers to clk.o(i.CLK_EnableModuleClock) for CLK_EnableModuleClock
+    portserial.o(i.xMBPortSerialInit) refers to uart.o(i.UART_Open) for UART_Open
+    portserial.o(i.xMBPortSerialInit) refers to port.o(i.EnterCriticalSection) for EnterCriticalSection
+    portserial.o(i.xMBPortSerialInit) refers to portserial.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    portserial.o(i.xMBPortSerialInit) refers to port.o(i.ExitCriticalSection) for ExitCriticalSection
+    porttimer.o(i.TMR1_IRQHandler) refers to display.o(i.Timetick50us) for Timetick50us
+    porttimer.o(i.TMR1_IRQHandler) refers to porttimer.o(i.prvvTIMERExpiredISR) for prvvTIMERExpiredISR
+    porttimer.o(i.TMR1_IRQHandler) refers to porttimer.o(.data) for Timehandel
+    porttimer.o(i.prvvTIMERExpiredISR) refers to mb.o(.data) for pxMBPortCBTimerExpired
+    porttimer.o(i.vMBPortTimersDisable) refers to porttimer.o(.data) for Timehandel
+    porttimer.o(i.vMBPortTimersEnable) refers to porttimer.o(.data) for Timehandel
+    porttimer.o(i.xMBPortTimersInit) refers to timer.o(i.TIMER_Open) for TIMER_Open
+    porttimer.o(i.xMBPortTimersInit) refers to porttimer.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    porttimer.o(i.xMBPortTimersInit) refers to porttimer.o(.data) for .data
+    user_mb_app.o(i.eMBRegCoilsCB) refers to user_mb_app.o(i.xMBMasterGetCBRunInMasterMode) for xMBMasterGetCBRunInMasterMode
+    user_mb_app.o(i.eMBRegCoilsCB) refers to user_mb_app.o(i.ucMBMasterGetDestAddress) for ucMBMasterGetDestAddress
+    user_mb_app.o(i.eMBRegCoilsCB) refers to mbutils.o(i.xMBUtilGetBits) for xMBUtilGetBits
+    user_mb_app.o(i.eMBRegCoilsCB) refers to mbutils.o(i.xMBUtilSetBits) for xMBUtilSetBits
+    user_mb_app.o(i.eMBRegCoilsCB) refers to user_mb_app.o(.bss) for ucMCoilBuf
+    user_mb_app.o(i.eMBRegCoilsCB) refers to user_mb_app.o(.data) for usMCoilStart
+    user_mb_app.o(i.eMBRegDiscreteCB) refers to user_mb_app.o(i.xMBMasterGetCBRunInMasterMode) for xMBMasterGetCBRunInMasterMode
+    user_mb_app.o(i.eMBRegDiscreteCB) refers to user_mb_app.o(i.ucMBMasterGetDestAddress) for ucMBMasterGetDestAddress
+    user_mb_app.o(i.eMBRegDiscreteCB) refers to mbutils.o(i.xMBUtilSetBits) for xMBUtilSetBits
+    user_mb_app.o(i.eMBRegDiscreteCB) refers to mbutils.o(i.xMBUtilGetBits) for xMBUtilGetBits
+    user_mb_app.o(i.eMBRegDiscreteCB) refers to user_mb_app.o(.bss) for ucMDiscInBuf
+    user_mb_app.o(i.eMBRegDiscreteCB) refers to user_mb_app.o(.data) for usMDiscInStart
+    user_mb_app.o(i.eMBRegHoldingCB) refers to user_mb_app.o(i.xMBMasterGetCBRunInMasterMode) for xMBMasterGetCBRunInMasterMode
+    user_mb_app.o(i.eMBRegHoldingCB) refers to user_mb_app.o(i.ucMBMasterGetDestAddress) for ucMBMasterGetDestAddress
+    user_mb_app.o(i.eMBRegHoldingCB) refers to user_mb_app.o(.bss) for usMRegHoldBuf
+    user_mb_app.o(i.eMBRegHoldingCB) refers to user_mb_app.o(.data) for usMRegHoldStart
+    user_mb_app.o(i.eMBRegInputCB) refers to user_mb_app.o(i.xMBMasterGetCBRunInMasterMode) for xMBMasterGetCBRunInMasterMode
+    user_mb_app.o(i.eMBRegInputCB) refers to user_mb_app.o(i.ucMBMasterGetDestAddress) for ucMBMasterGetDestAddress
+    user_mb_app.o(i.eMBRegInputCB) refers to user_mb_app.o(.bss) for usMRegInBuf
+    user_mb_app.o(i.eMBRegInputCB) refers to user_mb_app.o(.data) for usMRegInStart
+    user_mb_app.o(.data) refers to user_mb_app.o(.bss) for usSRegInBuf
+    mbcrc.o(i.crc_ccitt) refers to mbcrc.o(.constdata) for .constdata
+    mbcrc.o(i.usMBCRC16) refers to mbcrc.o(.constdata) for .constdata
+    mbrtu.o(i.eMBRTUInit) refers to port.o(i.EnterCriticalSection) for EnterCriticalSection
+    mbrtu.o(i.eMBRTUInit) refers to portserial.o(i.xMBPortSerialInit) for xMBPortSerialInit
+    mbrtu.o(i.eMBRTUInit) refers to uidiv.o(.text) for __aeabi_uidivmod
+    mbrtu.o(i.eMBRTUInit) refers to porttimer.o(i.xMBPortTimersInit) for xMBPortTimersInit
+    mbrtu.o(i.eMBRTUInit) refers to port.o(i.ExitCriticalSection) for ExitCriticalSection
+    mbrtu.o(i.eMBRTUReceive) refers to port.o(i.EnterCriticalSection) for EnterCriticalSection
+    mbrtu.o(i.eMBRTUReceive) refers to mbcrc.o(i.usMBCRC16) for usMBCRC16
+    mbrtu.o(i.eMBRTUReceive) refers to port.o(i.ExitCriticalSection) for ExitCriticalSection
+    mbrtu.o(i.eMBRTUReceive) refers to mbrtu.o(.data) for .data
+    mbrtu.o(i.eMBRTUReceive) refers to mbrtu.o(.bss) for ucRTUBuf
+    mbrtu.o(i.eMBRTUSend) refers to port.o(i.EnterCriticalSection) for EnterCriticalSection
+    mbrtu.o(i.eMBRTUSend) refers to mbcrc.o(i.usMBCRC16) for usMBCRC16
+    mbrtu.o(i.eMBRTUSend) refers to portserial.o(i.vMBPortSerialEnable) for vMBPortSerialEnable
+    mbrtu.o(i.eMBRTUSend) refers to port.o(i.ExitCriticalSection) for ExitCriticalSection
+    mbrtu.o(i.eMBRTUSend) refers to mbrtu.o(.data) for .data
+    mbrtu.o(i.eMBRTUSend) refers to mbrtu.o(.bss) for ucRTUBuf
+    mbrtu.o(i.eMBRTUStart) refers to port.o(i.EnterCriticalSection) for EnterCriticalSection
+    mbrtu.o(i.eMBRTUStart) refers to portserial.o(i.vMBPortSerialEnable) for vMBPortSerialEnable
+    mbrtu.o(i.eMBRTUStart) refers to porttimer.o(i.vMBPortTimersEnable) for vMBPortTimersEnable
+    mbrtu.o(i.eMBRTUStart) refers to port.o(i.ExitCriticalSection) for ExitCriticalSection
+    mbrtu.o(i.eMBRTUStart) refers to mbrtu.o(.data) for .data
+    mbrtu.o(i.eMBRTUStop) refers to port.o(i.EnterCriticalSection) for EnterCriticalSection
+    mbrtu.o(i.eMBRTUStop) refers to portserial.o(i.vMBPortSerialEnable) for vMBPortSerialEnable
+    mbrtu.o(i.eMBRTUStop) refers to porttimer.o(i.vMBPortTimersDisable) for vMBPortTimersDisable
+    mbrtu.o(i.eMBRTUStop) refers to port.o(i.ExitCriticalSection) for ExitCriticalSection
+    mbrtu.o(i.peBTFrameSendCur) refers to port.o(i.EnterCriticalSection) for EnterCriticalSection
+    mbrtu.o(i.peBTFrameSendCur) refers to port.o(i.ExitCriticalSection) for ExitCriticalSection
+    mbrtu.o(i.peBTFrameSendCur) refers to memcpya.o(.text) for __aeabi_memcpy
+    mbrtu.o(i.peBTFrameSendCur) refers to mbcrc.o(i.crc_ccitt) for crc_ccitt
+    mbrtu.o(i.peBTFrameSendCur) refers to portserial.o(i.vMBPortSerialEnable) for vMBPortSerialEnable
+    mbrtu.o(i.peBTFrameSendCur) refers to mbrtu.o(.data) for .data
+    mbrtu.o(i.peBTFrameSendCur) refers to mbrtu.o(.bss) for ucRTUBuf
+    mbrtu.o(i.xMBRTUReceiveFSM) refers to portserial.o(i.xMBPortSerialGetByte) for xMBPortSerialGetByte
+    mbrtu.o(i.xMBRTUReceiveFSM) refers to porttimer.o(i.vMBPortTimersEnable) for vMBPortTimersEnable
+    mbrtu.o(i.xMBRTUReceiveFSM) refers to mbrtu.o(.data) for .data
+    mbrtu.o(i.xMBRTUReceiveFSM) refers to mbrtu.o(.bss) for ucRTUBuf
+    mbrtu.o(i.xMBRTUTimerT35Expired) refers to portevent.o(i.xMBPortEventPost) for xMBPortEventPost
+    mbrtu.o(i.xMBRTUTimerT35Expired) refers to porttimer.o(i.vMBPortTimersDisable) for vMBPortTimersDisable
+    mbrtu.o(i.xMBRTUTimerT35Expired) refers to mbrtu.o(.data) for .data
+    mbrtu.o(i.xMBRTUTransmitFSM) refers to portserial.o(i.vMBPortSerialEnable) for vMBPortSerialEnable
+    mbrtu.o(i.xMBRTUTransmitFSM) refers to portserial.o(i.xMBPortSerialPutByte) for xMBPortSerialPutByte
+    mbrtu.o(i.xMBRTUTransmitFSM) refers to portevent.o(i.xMBPortEventPost) for xMBPortEventPost
+    mbrtu.o(i.xMBRTUTransmitFSM) refers to mbrtu.o(.data) for .data
+    btfunc.o(i.eBTFuncReadHoldingRegister) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfunccoils.o(i.eMBFuncReadCoils) refers to user_mb_app.o(i.eMBRegCoilsCB) for eMBRegCoilsCB
+    mbfunccoils.o(i.eMBFuncReadCoils) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfunccoils.o(i.eMBFuncWriteCoil) refers to user_mb_app.o(i.eMBRegCoilsCB) for eMBRegCoilsCB
+    mbfunccoils.o(i.eMBFuncWriteCoil) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfunccoils.o(i.eMBFuncWriteMultipleCoils) refers to user_mb_app.o(i.eMBRegCoilsCB) for eMBRegCoilsCB
+    mbfunccoils.o(i.eMBFuncWriteMultipleCoils) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfuncdisc.o(i.eMBFuncReadDiscreteInputs) refers to user_mb_app.o(i.eMBRegDiscreteCB) for eMBRegDiscreteCB
+    mbfuncdisc.o(i.eMBFuncReadDiscreteInputs) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfuncholding.o(i.eMBFuncReadHoldingRegister) refers to user_mb_app.o(i.eMBRegHoldingCB) for eMBRegHoldingCB
+    mbfuncholding.o(i.eMBFuncReadHoldingRegister) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfuncholding.o(i.eMBFuncReadWriteMultipleHoldingRegister) refers to user_mb_app.o(i.eMBRegHoldingCB) for eMBRegHoldingCB
+    mbfuncholding.o(i.eMBFuncReadWriteMultipleHoldingRegister) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfuncholding.o(i.eMBFuncWriteHoldingRegister) refers to user_mb_app.o(i.eMBRegHoldingCB) for eMBRegHoldingCB
+    mbfuncholding.o(i.eMBFuncWriteHoldingRegister) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfuncholding.o(i.eMBFuncWriteMultipleHoldingRegister) refers to user_mb_app.o(i.eMBRegHoldingCB) for eMBRegHoldingCB
+    mbfuncholding.o(i.eMBFuncWriteMultipleHoldingRegister) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfuncinput.o(i.eMBFuncReadInputRegister) refers to user_mb_app.o(i.eMBRegInputCB) for eMBRegInputCB
+    mbfuncinput.o(i.eMBFuncReadInputRegister) refers to mbutils.o(i.prveMBError2Exception) for prveMBError2Exception
+    mbfuncother.o(i.eMBFuncReportSlaveID) refers to memcpya.o(.text) for __aeabi_memcpy
+    mbfuncother.o(i.eMBFuncReportSlaveID) refers to mbfuncother.o(.data) for .data
+    mbfuncother.o(i.eMBFuncReportSlaveID) refers to mbfuncother.o(.bss) for .bss
+    mbfuncother.o(i.eMBSetSlaveID) refers to memcpya.o(.text) for __aeabi_memcpy
+    mbfuncother.o(i.eMBSetSlaveID) refers to mbfuncother.o(.data) for .data
+    mbfuncother.o(i.eMBSetSlaveID) refers to mbfuncother.o(.bss) for .bss
+    mb.o(i.eMBClose) refers to mb.o(.data) for .data
+    mb.o(i.eMBDisable) refers to mb.o(.data) for .data
+    mb.o(i.eMBEnable) refers to mb.o(.data) for .data
+    mb.o(i.eMBInit) refers to mbrtu.o(i.eMBRTUInit) for eMBRTUInit
+    mb.o(i.eMBInit) refers to portevent.o(i.xMBPortEventInit) for xMBPortEventInit
+    mb.o(i.eMBInit) refers to mb.o(.data) for .data
+    mb.o(i.eMBInit) refers to mbrtu.o(i.eMBRTUStart) for eMBRTUStart
+    mb.o(i.eMBInit) refers to mbrtu.o(i.eMBRTUStop) for eMBRTUStop
+    mb.o(i.eMBInit) refers to mbrtu.o(i.eMBRTUSend) for eMBRTUSend
+    mb.o(i.eMBInit) refers to mbrtu.o(i.eMBRTUReceive) for eMBRTUReceive
+    mb.o(i.eMBInit) refers to mbrtu.o(i.xMBRTUReceiveFSM) for xMBRTUReceiveFSM
+    mb.o(i.eMBInit) refers to mbrtu.o(i.xMBRTUTransmitFSM) for xMBRTUTransmitFSM
+    mb.o(i.eMBInit) refers to mbrtu.o(i.xMBRTUTimerT35Expired) for xMBRTUTimerT35Expired
+    mb.o(i.eMBPoll) refers to portevent.o(i.xMBPortEventGet) for xMBPortEventGet
+    mb.o(i.eMBPoll) refers to mb.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    mb.o(i.eMBPoll) refers to portevent.o(i.xMBPortEventPost) for xMBPortEventPost
+    mb.o(i.eMBPoll) refers to mbrtu.o(i.peBTFrameSendCur) for peBTFrameSendCur
+    mb.o(i.eMBPoll) refers to mb.o(.data) for .data
+    mb.o(i.eMBRegisterCB) refers to port.o(i.EnterCriticalSection) for EnterCriticalSection
+    mb.o(i.eMBRegisterCB) refers to port.o(i.ExitCriticalSection) for ExitCriticalSection
+    mb.o(i.eMBRegisterCB) refers to mb.o(.data) for .data
+    mb.o(.data) refers to btfunc.o(i.eBTFuncReadHoldingRegister) for eBTFuncReadHoldingRegister
+    mb.o(.data) refers to mbfuncother.o(i.eMBFuncReportSlaveID) for eMBFuncReportSlaveID
+    mb.o(.data) refers to mbfuncinput.o(i.eMBFuncReadInputRegister) for eMBFuncReadInputRegister
+    mb.o(.data) refers to mbfuncholding.o(i.eMBFuncReadHoldingRegister) for eMBFuncReadHoldingRegister
+    mb.o(.data) refers to mbfuncholding.o(i.eMBFuncWriteMultipleHoldingRegister) for eMBFuncWriteMultipleHoldingRegister
+    mb.o(.data) refers to mbfuncholding.o(i.eMBFuncWriteHoldingRegister) for eMBFuncWriteHoldingRegister
+    mb.o(.data) refers to mbfuncholding.o(i.eMBFuncReadWriteMultipleHoldingRegister) for eMBFuncReadWriteMultipleHoldingRegister
+    mb.o(.data) refers to mbfunccoils.o(i.eMBFuncReadCoils) for eMBFuncReadCoils
+    mb.o(.data) refers to mbfunccoils.o(i.eMBFuncWriteCoil) for eMBFuncWriteCoil
+    mb.o(.data) refers to mbfunccoils.o(i.eMBFuncWriteMultipleCoils) for eMBFuncWriteMultipleCoils
+    mb.o(.data) refers to mbfuncdisc.o(i.eMBFuncReadDiscreteInputs) for eMBFuncReadDiscreteInputs
+    clk.o(i.CLK_DisableCKO) refers to clk.o(i.CLK_DisableModuleClock) for CLK_DisableModuleClock
+    clk.o(i.CLK_EnableCKO) refers to clk.o(i.CLK_EnableModuleClock) for CLK_EnableModuleClock
+    clk.o(i.CLK_EnableCKO) refers to clk.o(i.CLK_SetModuleClock) for CLK_SetModuleClock
+    clk.o(i.CLK_EnablePLL) refers to clk.o(i.CLK_WaitClockReady) for CLK_WaitClockReady
+    clk.o(i.CLK_EnablePLL) refers to clk.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    clk.o(i.CLK_EnablePLL) refers to uidiv.o(.text) for __aeabi_uidivmod
+    clk.o(i.CLK_GetCPUFreq) refers to system_m051series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    clk.o(i.CLK_GetCPUFreq) refers to system_m051series.o(.data) for SystemCoreClock
+    clk.o(i.CLK_GetHCLKFreq) refers to system_m051series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    clk.o(i.CLK_GetHCLKFreq) refers to system_m051series.o(.data) for SystemCoreClock
+    clk.o(i.CLK_GetPLLClockFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    clk.o(i.CLK_SetCoreClock) refers to clk.o(i.CLK_EnablePLL) for CLK_EnablePLL
+    clk.o(i.CLK_SetCoreClock) refers to clk.o(i.CLK_SetHCLK) for CLK_SetHCLK
+    clk.o(i.CLK_SetHCLK) refers to system_m051series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    ebi.o(i.EBI_Open) refers to mb.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    fmc.o(i.FMC_ReadConfig) refers to fmc.o(i.FMC_Read) for FMC_Read
+    fmc.o(i.FMC_WriteConfig) refers to fmc.o(i.FMC_Read) for FMC_Read
+    i2c.o(i.I2C_GetBusClockFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    i2c.o(i.I2C_GetBusClockFreq) refers to system_m051series.o(.data) for SystemCoreClock
+    i2c.o(i.I2C_Open) refers to uidiv.o(.text) for __aeabi_uidivmod
+    i2c.o(i.I2C_Open) refers to system_m051series.o(.data) for SystemCoreClock
+    i2c.o(i.I2C_SetBusClockFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    i2c.o(i.I2C_SetBusClockFreq) refers to system_m051series.o(.data) for SystemCoreClock
+    pwm.o(i.PWM_ConfigCaptureChannel) refers to memcpya.o(.text) for __aeabi_memcpy4
+    pwm.o(i.PWM_ConfigCaptureChannel) refers to system_m051series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    pwm.o(i.PWM_ConfigCaptureChannel) refers to uidiv.o(.text) for __aeabi_uidivmod
+    pwm.o(i.PWM_ConfigCaptureChannel) refers to pwm.o(.constdata) for .constdata
+    pwm.o(i.PWM_ConfigCaptureChannel) refers to system_m051series.o(.data) for SystemCoreClock
+    pwm.o(i.PWM_ConfigOutputChannel) refers to memcpya.o(.text) for __aeabi_memcpy4
+    pwm.o(i.PWM_ConfigOutputChannel) refers to system_m051series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    pwm.o(i.PWM_ConfigOutputChannel) refers to uidiv.o(.text) for __aeabi_uidivmod
+    pwm.o(i.PWM_ConfigOutputChannel) refers to pwm.o(.constdata) for .constdata
+    pwm.o(i.PWM_ConfigOutputChannel) refers to system_m051series.o(.data) for SystemCoreClock
+    retarget.o(i.SendChar) refers to retarget.o(i.SendChar_ToUART) for SendChar_ToUART
+    retarget.o(i._ttywrch) refers to retarget.o(i.SendChar) for SendChar
+    retarget.o(i.fgetc) refers to retarget.o(i.GetChar) for GetChar
+    retarget.o(i.fputc) refers to retarget.o(i.SendChar) for SendChar
+    spi.o(i.CLK_GetPLLClockFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    spi.o(i.SPI_GetBusClock) refers to clk.o(i.CLK_GetHCLKFreq) for CLK_GetHCLKFreq
+    spi.o(i.SPI_GetBusClock) refers to uidiv.o(.text) for __aeabi_uidivmod
+    spi.o(i.SPI_GetBusClock) refers to spi.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    spi.o(i.SPI_Open) refers to clk.o(i.CLK_GetHCLKFreq) for CLK_GetHCLKFreq
+    spi.o(i.SPI_Open) refers to uidiv.o(.text) for __aeabi_uidivmod
+    spi.o(i.SPI_Open) refers to spi.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    spi.o(i.SPI_SetBusClock) refers to clk.o(i.CLK_GetHCLKFreq) for CLK_GetHCLKFreq
+    spi.o(i.SPI_SetBusClock) refers to uidiv.o(.text) for __aeabi_uidivmod
+    spi.o(i.SPI_SetBusClock) refers to spi.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    timer.o(i.TIMER_Delay) refers to timer.o(i.TIMER_GetModuleClock) for TIMER_GetModuleClock
+    timer.o(i.TIMER_Delay) refers to uidiv.o(.text) for __aeabi_uidivmod
+    timer.o(i.TIMER_Delay) refers to system_m051series.o(.data) for SystemCoreClock
+    timer.o(i.TIMER_GetModuleClock) refers to memcpya.o(.text) for __aeabi_memcpy4
+    timer.o(i.TIMER_GetModuleClock) refers to timer.o(.constdata) for .constdata
+    timer.o(i.TIMER_GetModuleClock) refers to system_m051series.o(.data) for SystemCoreClock
+    timer.o(i.TIMER_Open) refers to timer.o(i.TIMER_GetModuleClock) for TIMER_GetModuleClock
+    timer.o(i.TIMER_Open) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.CLK_GetPLLClockFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.UART_DisableInt) refers to uart.o(i.NVIC_DisableIRQ) for NVIC_DisableIRQ
+    uart.o(i.UART_EnableInt) refers to uart.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    uart.o(i.UART_Open) refers to uart.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    uart.o(i.UART_Open) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.UART_Open) refers to uart.o(.constdata) for .constdata
+    uart.o(i.UART_SelectIrDAMode) refers to uart.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    uart.o(i.UART_SelectIrDAMode) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.UART_SelectIrDAMode) refers to uart.o(.constdata) for .constdata
+    uart.o(i.UART_SetLine_Config) refers to uart.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    uart.o(i.UART_SetLine_Config) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.UART_SetLine_Config) refers to uart.o(.constdata) for .constdata
+    startup_m051series.o(RESET) refers to startup_m051series.o(STACK) for __initial_sp
+    startup_m051series.o(RESET) refers to startup_m051series.o(.text) for Reset_Handler
+    startup_m051series.o(RESET) refers to display.o(i.EINT0_IRQHandler) for EINT0_IRQHandler
+    startup_m051series.o(RESET) refers to display.o(i.EINT1_IRQHandler) for EINT1_IRQHandler
+    startup_m051series.o(RESET) refers to display.o(i.GPIOP2P3P4_IRQHandler) for GPIOP2P3P4_IRQHandler
+    startup_m051series.o(RESET) refers to porttimer.o(i.TMR1_IRQHandler) for TMR1_IRQHandler
+    startup_m051series.o(RESET) refers to portserial.o(i.UART0_IRQHandler) for UART0_IRQHandler
+    startup_m051series.o(.text) refers to system_m051series.o(i.SystemInit) for SystemInit
+    startup_m051series.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_m051series.o(i.CLK_GetPLLClockFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    system_m051series.o(i.SystemCoreClockUpdate) refers to system_m051series.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    system_m051series.o(i.SystemCoreClockUpdate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    system_m051series.o(i.SystemCoreClockUpdate) refers to system_m051series.o(.data) for PllClock
+    system_m051series.o(i.SystemCoreClockUpdate) refers to system_m051series.o(.constdata) for gau32ClkSrcTbl
+    realyctrl.o(i.GetHwAddrIint) refers to gpio.o(i.GPIO_SetMode) for GPIO_SetMode
+    realyctrl.o(i.HWRealyInit) refers to gpio.o(i.GPIO_SetMode) for GPIO_SetMode
+    realyctrl.o(i.KeyPool) refers to user_mb_app.o(.bss) for usSRegHoldBuf
+    realyctrl.o(i.RealyCtrl) refers to mb.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    realyctrl.o(i.RealyPoll) refers to realyctrl.o(i.RealyCtrl) for RealyCtrl
+    realyctrl.o(i.RealyPoll) refers to user_mb_app.o(.bss) for usSRegHoldBuf
+    realyctrl.o(i.RealyPoll) refers to realyctrl.o(.data) for new
+    display.o(i.BuzzePoll) refers to display.o(i.SetBuzzer) for SetBuzzer
+    display.o(i.BuzzePoll) refers to display.o(.data) for .data
+    display.o(i.CountPoll) refers to idiv.o(.text) for __aeabi_idivmod
+    display.o(i.CountPoll) refers to display.o(i.SetNumber) for SetNumber
+    display.o(i.CountPoll) refers to display.o(.data) for TimeCount
+    display.o(i.DisplayHWInit) refers to gpio.o(i.GPIO_SetMode) for GPIO_SetMode
+    display.o(i.DisplayPoll) refers to display.o(.data) for .data
+    display.o(i.DisplayPoll) refers to display.o(.constdata) for NumberTab
+    display.o(i.DisplayScan) refers to display.o(i.DisplayPoll) for DisplayPoll
+    display.o(i.DisplayScan) refers to display.o(.data) for .data
+    display.o(i.EINT0_IRQHandler) refers to display.o(.data) for .data
+    display.o(i.GPIOP2P3P4_IRQHandler) refers to display.o(i.TimeRunHook) for TimeRunHook
+    display.o(i.GetFlash) refers to display.o(i.FMC_Read) for FMC_Read
+    display.o(i.GetFlash) refers to display.o(.data) for flash
+    display.o(i.KeyProc) refers to display.o(i.TimeRunHook) for TimeRunHook
+    display.o(i.KeyProc) refers to display.o(.data) for Trg
+    display.o(i.KeyRead) refers to display.o(.data) for Cont
+    display.o(i.RotaryEncoderHWinit) refers to gpio.o(i.GPIO_SetMode) for GPIO_SetMode
+    display.o(i.RotaryEncoderHWinit) refers to gpio.o(i.GPIO_EnableInt) for GPIO_EnableInt
+    display.o(i.RotaryEncoderHWinit) refers to display.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    display.o(i.SaveFlash) refers to display.o(.data) for flash
+    display.o(i.SetNumber) refers to display.o(.data) for .data
+    display.o(i.TimeDec) refers to display.o(.data) for .data
+    display.o(i.TimeInit) refers to fmc.o(i.FMC_Open) for FMC_Open
+    display.o(i.TimeInit) refers to display.o(i.FMC_Read) for FMC_Read
+    display.o(i.TimeInit) refers to display.o(.data) for .data
+    display.o(i.TimeRunHook) refers to display.o(i.SaveFlash) for SaveFlash
+    display.o(i.TimeRunHook) refers to display.o(i.GetFlash) for GetFlash
+    display.o(i.TimeRunHook) refers to display.o(.data) for .data
+    display.o(i.Timetick50us) refers to display.o(i.TimeDec) for TimeDec
+    display.o(i.Timetick50us) refers to display.o(.data) for .data
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7.o(.ARM.Collect$$$$00000007) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    idiv.o(.text) refers to uidiv.o(.text) for __aeabi_uidivmod
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_m051series.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_m051series.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry7.o(.ARM.Collect$$$$00000007) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(i.DrvSYS_Delay), (44 bytes).
+    Removing main.o(i.UART0_Init), (28 bytes).
+    Removing portserial.o(.rev16_text), (4 bytes).
+    Removing portserial.o(.revsh_text), (4 bytes).
+    Removing portserial.o(i.vMBPortClose), (2 bytes).
+    Removing porttimer.o(.rev16_text), (4 bytes).
+    Removing porttimer.o(.revsh_text), (4 bytes).
+    Removing mbrtu.o(.rev16_text), (4 bytes).
+    Removing mbrtu.o(.revsh_text), (4 bytes).
+    Removing btfunc.o(.rev16_text), (4 bytes).
+    Removing btfunc.o(.revsh_text), (4 bytes).
+    Removing mbfuncother.o(.rev16_text), (4 bytes).
+    Removing mbfuncother.o(.revsh_text), (4 bytes).
+    Removing mbfuncother.o(i.eMBSetSlaveID), (120 bytes).
+    Removing mbutils.o(.rev16_text), (4 bytes).
+    Removing mbutils.o(.revsh_text), (4 bytes).
+    Removing mb.o(i.eMBClose), (44 bytes).
+    Removing mb.o(i.eMBDisable), (52 bytes).
+    Removing mb.o(i.eMBRegisterCB), (140 bytes).
+    Removing acmp.o(.rev16_text), (4 bytes).
+    Removing acmp.o(.revsh_text), (4 bytes).
+    Removing acmp.o(i.ACMP_Close), (18 bytes).
+    Removing acmp.o(i.ACMP_Open), (30 bytes).
+    Removing adc.o(.rev16_text), (4 bytes).
+    Removing adc.o(.revsh_text), (4 bytes).
+    Removing adc.o(i.ADC_Close), (36 bytes).
+    Removing adc.o(i.ADC_DisableHWTrigger), (20 bytes).
+    Removing adc.o(i.ADC_DisableInt), (60 bytes).
+    Removing adc.o(i.ADC_EnableHWTrigger), (80 bytes).
+    Removing adc.o(i.ADC_EnableInt), (60 bytes).
+    Removing adc.o(i.ADC_Open), (40 bytes).
+    Removing clk.o(.rev16_text), (4 bytes).
+    Removing clk.o(.revsh_text), (4 bytes).
+    Removing clk.o(i.CLK_DisableCKO), (16 bytes).
+    Removing clk.o(i.CLK_DisableModuleClock), (32 bytes).
+    Removing clk.o(i.CLK_DisablePLL), (20 bytes).
+    Removing clk.o(i.CLK_DisableXtalRC), (16 bytes).
+    Removing clk.o(i.CLK_EnableCKO), (48 bytes).
+    Removing clk.o(i.CLK_EnablePLL), (304 bytes).
+    Removing clk.o(i.CLK_EnableXtalRC), (16 bytes).
+    Removing clk.o(i.CLK_GetCPUFreq), (16 bytes).
+    Removing clk.o(i.CLK_GetHCLKFreq), (16 bytes).
+    Removing clk.o(i.CLK_GetHXTFreq), (28 bytes).
+    Removing clk.o(i.CLK_GetPLLClockFreq), (124 bytes).
+    Removing clk.o(i.CLK_Idle), (36 bytes).
+    Removing clk.o(i.CLK_PowerDown), (40 bytes).
+    Removing clk.o(i.CLK_SetCoreClock), (80 bytes).
+    Removing clk.o(i.CLK_SetHCLK), (44 bytes).
+    Removing clk.o(i.CLK_SetSysTickClockSrc), (20 bytes).
+    Removing ebi.o(.rev16_text), (4 bytes).
+    Removing ebi.o(.revsh_text), (4 bytes).
+    Removing ebi.o(i.EBI_Close), (20 bytes).
+    Removing ebi.o(i.EBI_Open), (272 bytes).
+    Removing ebi.o(i.EBI_SetBusTiming), (32 bytes).
+    Removing fmc.o(.rev16_text), (4 bytes).
+    Removing fmc.o(.revsh_text), (4 bytes).
+    Removing fmc.o(i.FMC_Close), (20 bytes).
+    Removing fmc.o(i.FMC_DisableAPUpdate), (20 bytes).
+    Removing fmc.o(i.FMC_DisableConfigUpdate), (20 bytes).
+    Removing fmc.o(i.FMC_DisableLDUpdate), (20 bytes).
+    Removing fmc.o(i.FMC_EnableAPUpdate), (20 bytes).
+    Removing fmc.o(i.FMC_EnableConfigUpdate), (20 bytes).
+    Removing fmc.o(i.FMC_EnableLDUpdate), (20 bytes).
+    Removing fmc.o(i.FMC_GetBootSource), (24 bytes).
+    Removing fmc.o(i.FMC_Read), (40 bytes).
+    Removing fmc.o(i.FMC_ReadConfig), (36 bytes).
+    Removing fmc.o(i.FMC_ReadDataFlashBaseAddr), (12 bytes).
+    Removing fmc.o(i.FMC_SetBootSource), (36 bytes).
+    Removing fmc.o(i.FMC_WriteConfig), (96 bytes).
+    Removing gpio.o(.rev16_text), (4 bytes).
+    Removing gpio.o(.revsh_text), (4 bytes).
+    Removing gpio.o(i.GPIO_DisableInt), (28 bytes).
+    Removing i2c.o(.rev16_text), (4 bytes).
+    Removing i2c.o(.revsh_text), (4 bytes).
+    Removing i2c.o(i.I2C_ClearTimeoutFlag), (10 bytes).
+    Removing i2c.o(i.I2C_Close), (44 bytes).
+    Removing i2c.o(i.I2C_DisableInt), (10 bytes).
+    Removing i2c.o(i.I2C_DisableTimeout), (10 bytes).
+    Removing i2c.o(i.I2C_DisableWakeup), (10 bytes).
+    Removing i2c.o(i.I2C_EnableInt), (10 bytes).
+    Removing i2c.o(i.I2C_EnableTimeout), (32 bytes).
+    Removing i2c.o(i.I2C_EnableWakeup), (10 bytes).
+    Removing i2c.o(i.I2C_GetBusClockFreq), (24 bytes).
+    Removing i2c.o(i.I2C_GetData), (8 bytes).
+    Removing i2c.o(i.I2C_GetIntFlag), (12 bytes).
+    Removing i2c.o(i.I2C_GetStatus), (6 bytes).
+    Removing i2c.o(i.I2C_Open), (64 bytes).
+    Removing i2c.o(i.I2C_SetBusClockFreq), (56 bytes).
+    Removing i2c.o(i.I2C_SetData), (4 bytes).
+    Removing i2c.o(i.I2C_SetSlaveAddr), (58 bytes).
+    Removing i2c.o(i.I2C_SetSlaveAddrMask), (48 bytes).
+    Removing i2c.o(i.I2C_Trigger), (50 bytes).
+    Removing pwm.o(.rev16_text), (4 bytes).
+    Removing pwm.o(.revsh_text), (4 bytes).
+    Removing pwm.o(i.PWM_ClearADCTriggerFlag), (12 bytes).
+    Removing pwm.o(i.PWM_ClearCaptureIntFlag), (72 bytes).
+    Removing pwm.o(i.PWM_ClearDutyIntFlag), (10 bytes).
+    Removing pwm.o(i.PWM_ClearPeriodIntFlag), (8 bytes).
+    Removing pwm.o(i.PWM_ConfigCaptureChannel), (364 bytes).
+    Removing pwm.o(i.PWM_ConfigOutputChannel), (400 bytes).
+    Removing pwm.o(i.PWM_DisableADCTrigger), (18 bytes).
+    Removing pwm.o(i.PWM_DisableCapture), (60 bytes).
+    Removing pwm.o(i.PWM_DisableCaptureInt), (40 bytes).
+    Removing pwm.o(i.PWM_DisableDeadZone), (14 bytes).
+    Removing pwm.o(i.PWM_DisableDutyInt), (14 bytes).
+    Removing pwm.o(i.PWM_DisableOutput), (8 bytes).
+    Removing pwm.o(i.PWM_DisablePeriodInt), (12 bytes).
+    Removing pwm.o(i.PWM_EnableADCTrigger), (26 bytes).
+    Removing pwm.o(i.PWM_EnableCapture), (60 bytes).
+    Removing pwm.o(i.PWM_EnableCaptureInt), (36 bytes).
+    Removing pwm.o(i.PWM_EnableDeadZone), (40 bytes).
+    Removing pwm.o(i.PWM_EnableDutyInt), (34 bytes).
+    Removing pwm.o(i.PWM_EnableOutput), (8 bytes).
+    Removing pwm.o(i.PWM_EnablePeriodInt), (32 bytes).
+    Removing pwm.o(i.PWM_ForceStop), (38 bytes).
+    Removing pwm.o(i.PWM_GetADCTriggerFlag), (22 bytes).
+    Removing pwm.o(i.PWM_GetCaptureIntFlag), (48 bytes).
+    Removing pwm.o(i.PWM_GetDutyIntFlag), (22 bytes).
+    Removing pwm.o(i.PWM_GetPeriodIntFlag), (20 bytes).
+    Removing pwm.o(i.PWM_Start), (38 bytes).
+    Removing pwm.o(i.PWM_Stop), (34 bytes).
+    Removing pwm.o(.constdata), (168 bytes).
+    Removing retarget.o(.rev16_text), (4 bytes).
+    Removing retarget.o(.revsh_text), (4 bytes).
+    Removing retarget.o(i.GetChar), (28 bytes).
+    Removing retarget.o(i.IsDebugFifoEmpty), (20 bytes).
+    Removing retarget.o(i.SendChar), (12 bytes).
+    Removing retarget.o(i.SendChar_ToUART), (48 bytes).
+    Removing retarget.o(i._ttywrch), (12 bytes).
+    Removing retarget.o(i.ferror), (8 bytes).
+    Removing retarget.o(i.fgetc), (10 bytes).
+    Removing retarget.o(i.fputc), (16 bytes).
+    Removing retarget.o(i.kbhit), (20 bytes).
+    Removing retarget.o(.data), (8 bytes).
+    Removing spi.o(.rev16_text), (4 bytes).
+    Removing spi.o(.revsh_text), (4 bytes).
+    Removing spi.o(i.CLK_GetPLLClockFreq), (124 bytes).
+    Removing spi.o(i.SPI_ClearIntFlag), (86 bytes).
+    Removing spi.o(i.SPI_ClearRxFIFO), (10 bytes).
+    Removing spi.o(i.SPI_ClearTxFIFO), (10 bytes).
+    Removing spi.o(i.SPI_Close), (108 bytes).
+    Removing spi.o(i.SPI_DisableAutoSS), (10 bytes).
+    Removing spi.o(i.SPI_DisableFIFO), (12 bytes).
+    Removing spi.o(i.SPI_DisableInt), (136 bytes).
+    Removing spi.o(i.SPI_EnableAutoSS), (22 bytes).
+    Removing spi.o(i.SPI_EnableFIFO), (32 bytes).
+    Removing spi.o(i.SPI_EnableInt), (136 bytes).
+    Removing spi.o(i.SPI_GetBusClock), (188 bytes).
+    Removing spi.o(i.SPI_GetIntFlag), (154 bytes).
+    Removing spi.o(i.SPI_GetStatus), (138 bytes).
+    Removing spi.o(i.SPI_Open), (580 bytes).
+    Removing spi.o(i.SPI_SetBusClock), (408 bytes).
+    Removing sys.o(.rev16_text), (4 bytes).
+    Removing sys.o(.revsh_text), (4 bytes).
+    Removing sys.o(i.SYS_ClearResetSrc), (16 bytes).
+    Removing sys.o(i.SYS_DisableBOD), (18 bytes).
+    Removing sys.o(i.SYS_EnableBOD), (50 bytes).
+    Removing sys.o(i.SYS_GetBODStatus), (14 bytes).
+    Removing sys.o(i.SYS_GetResetSrc), (8 bytes).
+    Removing sys.o(i.SYS_IsRegLocked), (20 bytes).
+    Removing sys.o(i.SYS_ReadPDID), (8 bytes).
+    Removing sys.o(i.SYS_ResetCPU), (18 bytes).
+    Removing sys.o(i.SYS_ResetChip), (18 bytes).
+    Removing timer.o(.rev16_text), (4 bytes).
+    Removing timer.o(.revsh_text), (4 bytes).
+    Removing timer.o(i.TIMER_Close), (8 bytes).
+    Removing timer.o(i.TIMER_Delay), (260 bytes).
+    Removing timer.o(i.TIMER_DisableCapture), (10 bytes).
+    Removing timer.o(i.TIMER_DisableEventCounter), (12 bytes).
+    Removing timer.o(i.TIMER_EnableCapture), (20 bytes).
+    Removing timer.o(i.TIMER_EnableEventCounter), (22 bytes).
+    Removing uart.o(.rev16_text), (4 bytes).
+    Removing uart.o(.revsh_text), (4 bytes).
+    Removing uart.o(i.NVIC_DisableIRQ), (20 bytes).
+    Removing uart.o(i.NVIC_EnableIRQ), (20 bytes).
+    Removing uart.o(i.UART_ClearIntFlag), (80 bytes).
+    Removing uart.o(i.UART_Close), (6 bytes).
+    Removing uart.o(i.UART_DisableFlowCtrl), (12 bytes).
+    Removing uart.o(i.UART_DisableInt), (40 bytes).
+    Removing uart.o(i.UART_EnableFlowCtrl), (30 bytes).
+    Removing uart.o(i.UART_EnableInt), (40 bytes).
+    Removing uart.o(i.UART_Read), (50 bytes).
+    Removing uart.o(i.UART_SelectIrDAMode), (140 bytes).
+    Removing uart.o(i.UART_SelectLINMode), (26 bytes).
+    Removing uart.o(i.UART_SelectRS485Mode), (32 bytes).
+    Removing uart.o(i.UART_SetLine_Config), (152 bytes).
+    Removing uart.o(i.UART_SetTimeoutCnt), (22 bytes).
+    Removing uart.o(i.UART_Write), (50 bytes).
+    Removing wdt.o(.rev16_text), (4 bytes).
+    Removing wdt.o(.revsh_text), (4 bytes).
+    Removing wdt.o(i.WDT_Open), (28 bytes).
+    Removing wwdt.o(.rev16_text), (4 bytes).
+    Removing wwdt.o(.revsh_text), (4 bytes).
+    Removing wwdt.o(i.WWDT_Open), (32 bytes).
+    Removing startup_m051series.o(HEAP), (0 bytes).
+    Removing system_m051series.o(.rev16_text), (4 bytes).
+    Removing system_m051series.o(.revsh_text), (4 bytes).
+    Removing realyctrl.o(.rev16_text), (4 bytes).
+    Removing realyctrl.o(.revsh_text), (4 bytes).
+    Removing realyctrl.o(i.GetHwAddrIint), (96 bytes).
+    Removing realyctrl.o(i.HWRealyInit), (48 bytes).
+    Removing realyctrl.o(i.KeyPool), (36 bytes).
+    Removing realyctrl.o(i.RealyCtrl), (204 bytes).
+    Removing realyctrl.o(i.RealyPoll), (108 bytes).
+    Removing realyctrl.o(.data), (16 bytes).
+    Removing timecount.o(.rev16_text), (4 bytes).
+    Removing timecount.o(.revsh_text), (4 bytes).
+    Removing display.o(.rev16_text), (4 bytes).
+    Removing display.o(.revsh_text), (4 bytes).
+    Removing display.o(i.KeyProc), (24 bytes).
+    Removing display.o(i.KeyRead), (52 bytes).
+
+213 unused section(s) (total 8900 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      192  startup_m051series.o(RESET)
+    ../../../cmprslib/zerorunl2.c            0x00000000   Number         0  __dczerorl2.o ABSOLUTE
+    ../../microlib/division.c                0x00000000   Number         0  idiv.o ABSOLUTE
+    ../../microlib/division.c                0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry2.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry5.o ABSOLUTE
+    ../../microlib/init/entry.s              0x00000000   Number         0  entry7.o ABSOLUTE
+    ../../microlib/printf/stubs.s            0x00000000   Number         0  stubs.o ABSOLUTE
+    ../../microlib/string/memcpy.c           0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../../microlib/string/memcpy.c           0x00000000   Number         0  memcpya.o ABSOLUTE
+    ..\TimeCount\src\Display.c               0x00000000   Number         0  display.o ABSOLUTE
+    ..\TimeCount\src\timecount.c             0x00000000   Number         0  timecount.o ABSOLUTE
+    ..\\TimeCount\\src\\Display.c            0x00000000   Number         0  display.o ABSOLUTE
+    ..\\TimeCount\\src\\timecount.c          0x00000000   Number         0  timecount.o ABSOLUTE
+    ..\\chip_lib\\Device\\Nuvoton\\M051Series\\Source\\system_M051Series.c 0x00000000   Number         0  system_m051series.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\acmp.c     0x00000000   Number         0  acmp.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\adc.c      0x00000000   Number         0  adc.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\clk.c      0x00000000   Number         0  clk.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\ebi.c      0x00000000   Number         0  ebi.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\fmc.c      0x00000000   Number         0  fmc.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\gpio.c     0x00000000   Number         0  gpio.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\i2c.c      0x00000000   Number         0  i2c.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\pwm.c      0x00000000   Number         0  pwm.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\retarget.c 0x00000000   Number         0  retarget.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\spi.c      0x00000000   Number         0  spi.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\sys.c      0x00000000   Number         0  sys.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\timer.c    0x00000000   Number         0  timer.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\uart.c     0x00000000   Number         0  uart.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\wdt.c      0x00000000   Number         0  wdt.o ABSOLUTE
+    ..\\chip_lib\\StdDriver\\src\\wwdt.c     0x00000000   Number         0  wwdt.o ABSOLUTE
+    ..\\freemodbus-v1.6.0\\modbus\\functions\\btfunc.c 0x00000000   Number         0  btfunc.o ABSOLUTE
+    ..\\freemodbus-v1.6.0\\modbus\\functions\\mbfuncother.c 0x00000000   Number         0  mbfuncother.o ABSOLUTE
+    ..\\freemodbus-v1.6.0\\modbus\\functions\\mbutils.c 0x00000000   Number         0  mbutils.o ABSOLUTE
+    ..\\freemodbus-v1.6.0\\modbus\\rtu\\mbrtu.c 0x00000000   Number         0  mbrtu.o ABSOLUTE
+    ..\\freemodbus-v1.6.0\\port\\portserial.c 0x00000000   Number         0  portserial.o ABSOLUTE
+    ..\\freemodbus-v1.6.0\\port\\porttimer.c 0x00000000   Number         0  porttimer.o ABSOLUTE
+    ..\\user\\src\\main.c                    0x00000000   Number         0  main.o ABSOLUTE
+    ..\\user\\src\\realyctrl.c               0x00000000   Number         0  realyctrl.o ABSOLUTE
+    ..\chip_lib\Device\Nuvoton\M051Series\Source\ARM\startup_M051Series.s 0x00000000   Number         0  startup_m051series.o ABSOLUTE
+    ..\chip_lib\Device\Nuvoton\M051Series\Source\system_M051Series.c 0x00000000   Number         0  system_m051series.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\acmp.c         0x00000000   Number         0  acmp.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\adc.c          0x00000000   Number         0  adc.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\clk.c          0x00000000   Number         0  clk.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\ebi.c          0x00000000   Number         0  ebi.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\fmc.c          0x00000000   Number         0  fmc.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\gpio.c         0x00000000   Number         0  gpio.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\i2c.c          0x00000000   Number         0  i2c.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\pwm.c          0x00000000   Number         0  pwm.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\retarget.c     0x00000000   Number         0  retarget.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\spi.c          0x00000000   Number         0  spi.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\sys.c          0x00000000   Number         0  sys.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\timer.c        0x00000000   Number         0  timer.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\uart.c         0x00000000   Number         0  uart.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\wdt.c          0x00000000   Number         0  wdt.o ABSOLUTE
+    ..\chip_lib\StdDriver\src\wwdt.c         0x00000000   Number         0  wwdt.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\functions\btfunc.c 0x00000000   Number         0  btfunc.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\functions\mbfunccoils.c 0x00000000   Number         0  mbfunccoils.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\functions\mbfuncdiag.c 0x00000000   Number         0  mbfuncdiag.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\functions\mbfuncdisc.c 0x00000000   Number         0  mbfuncdisc.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\functions\mbfuncholding.c 0x00000000   Number         0  mbfuncholding.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\functions\mbfuncinput.c 0x00000000   Number         0  mbfuncinput.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\functions\mbfuncother.c 0x00000000   Number         0  mbfuncother.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\functions\mbutils.c 0x00000000   Number         0  mbutils.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\mb.c         0x00000000   Number         0  mb.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\rtu\mbcrc.c  0x00000000   Number         0  mbcrc.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\rtu\mbrtu.c  0x00000000   Number         0  mbrtu.o ABSOLUTE
+    ..\freemodbus-v1.6.0\modbus\tcp\mbtcp.c  0x00000000   Number         0  mbtcp.o ABSOLUTE
+    ..\freemodbus-v1.6.0\port\port.c         0x00000000   Number         0  port.o ABSOLUTE
+    ..\freemodbus-v1.6.0\port\portevent.c    0x00000000   Number         0  portevent.o ABSOLUTE
+    ..\freemodbus-v1.6.0\port\portserial.c   0x00000000   Number         0  portserial.o ABSOLUTE
+    ..\freemodbus-v1.6.0\port\porttimer.c    0x00000000   Number         0  porttimer.o ABSOLUTE
+    ..\freemodbus-v1.6.0\port\user_mb_app.c  0x00000000   Number         0  user_mb_app.o ABSOLUTE
+    ..\user\src\main.c                       0x00000000   Number         0  main.o ABSOLUTE
+    ..\user\src\realyctrl.c                  0x00000000   Number         0  realyctrl.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000007                 0x000000c8   Section        8  entry7.o(.ARM.Collect$$$$00000007)
+    .ARM.Collect$$$$00002712                 0x000000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000d4   Section       76  startup_m051series.o(.text)
+    Default_Handler                          0x000000ff   Thumb Code     2  startup_m051series.o(.text)
+    .text                                    0x00000120   Section        0  uidiv.o(.text)
+    .text                                    0x0000014c   Section        0  idiv.o(.text)
+    .text                                    0x00000174   Section        0  memcpya.o(.text)
+    .text                                    0x00000198   Section       36  init.o(.text)
+    .text                                    0x000001bc   Section        0  __dczerorl2.o(.text)
+    i.BuzzePoll                              0x00000214   Section        0  display.o(i.BuzzePoll)
+    i.CLK_EnableModuleClock                  0x00000234   Section        0  clk.o(i.CLK_EnableModuleClock)
+    i.CLK_GetPLLClockFreq                    0x00000254   Section        0  uart.o(i.CLK_GetPLLClockFreq)
+    CLK_GetPLLClockFreq                      0x00000255   Thumb Code   106  uart.o(i.CLK_GetPLLClockFreq)
+    i.CLK_GetPLLClockFreq                    0x000002d0   Section        0  system_m051series.o(i.CLK_GetPLLClockFreq)
+    CLK_GetPLLClockFreq                      0x000002d1   Thumb Code   106  system_m051series.o(i.CLK_GetPLLClockFreq)
+    i.CLK_SetModuleClock                     0x0000034c   Section        0  clk.o(i.CLK_SetModuleClock)
+    i.CLK_WaitClockReady                     0x000003a8   Section        0  clk.o(i.CLK_WaitClockReady)
+    i.CountPoll                              0x000003cc   Section        0  display.o(i.CountPoll)
+    i.DisplayHWInit                          0x00000458   Section        0  display.o(i.DisplayHWInit)
+    i.DisplayPoll                            0x000004a8   Section        0  display.o(i.DisplayPoll)
+    i.DisplayScan                            0x00000560   Section        0  display.o(i.DisplayScan)
+    i.EINT0_IRQHandler                       0x0000057c   Section        0  display.o(i.EINT0_IRQHandler)
+    i.EINT1_IRQHandler                       0x000005ec   Section        0  display.o(i.EINT1_IRQHandler)
+    i.EnterCriticalSection                   0x000005f8   Section        0  port.o(i.EnterCriticalSection)
+    i.ExitCriticalSection                    0x000005fc   Section        0  port.o(i.ExitCriticalSection)
+    i.FMC_Open                               0x00000600   Section        0  fmc.o(i.FMC_Open)
+    i.FMC_Read                               0x00000614   Section        0  display.o(i.FMC_Read)
+    FMC_Read                                 0x00000615   Thumb Code    36  display.o(i.FMC_Read)
+    i.GPIOP2P3P4_IRQHandler                  0x0000063c   Section        0  display.o(i.GPIOP2P3P4_IRQHandler)
+    i.GPIO_EnableInt                         0x00000650   Section        0  gpio.o(i.GPIO_EnableInt)
+    i.GPIO_SetMode                           0x0000066a   Section        0  gpio.o(i.GPIO_SetMode)
+    i.GetFlash                               0x00000694   Section        0  display.o(i.GetFlash)
+    i.NVIC_EnableIRQ                         0x000006ac   Section        0  display.o(i.NVIC_EnableIRQ)
+    NVIC_EnableIRQ                           0x000006ad   Thumb Code    14  display.o(i.NVIC_EnableIRQ)
+    i.NVIC_SetPriority                       0x000006c0   Section        0  portserial.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x000006c1   Thumb Code   110  portserial.o(i.NVIC_SetPriority)
+    i.NVIC_SetPriority                       0x00000738   Section        0  porttimer.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x00000739   Thumb Code   110  porttimer.o(i.NVIC_SetPriority)
+    i.RotaryEncoderHWinit                    0x000007b0   Section        0  display.o(i.RotaryEncoderHWinit)
+    i.SYS_Init                               0x00000834   Section        0  main.o(i.SYS_Init)
+    i.SYS_ResetModule                        0x000008a4   Section        0  sys.o(i.SYS_ResetModule)
+    i.SaveFlash                              0x000008d4   Section        0  display.o(i.SaveFlash)
+    i.SetBuzzer                              0x00000950   Section        0  display.o(i.SetBuzzer)
+    i.SetNumber                              0x00000968   Section        0  display.o(i.SetNumber)
+    i.SystemCoreClockUpdate                  0x00000998   Section        0  system_m051series.o(i.SystemCoreClockUpdate)
+    i.SystemInit                             0x000009fc   Section        0  system_m051series.o(i.SystemInit)
+    i.TIMER_GetModuleClock                   0x00000a00   Section        0  timer.o(i.TIMER_GetModuleClock)
+    i.TIMER_Open                             0x00000a84   Section        0  timer.o(i.TIMER_Open)
+    i.TMR1_IRQHandler                        0x00000af8   Section        0  porttimer.o(i.TMR1_IRQHandler)
+    i.TimeDec                                0x00000b58   Section        0  display.o(i.TimeDec)
+    i.TimeInit                               0x00000bb0   Section        0  display.o(i.TimeInit)
+    i.TimeRunHook                            0x00000c0c   Section        0  display.o(i.TimeRunHook)
+    i.Timetick50us                           0x00000ca4   Section        0  display.o(i.Timetick50us)
+    i.UART0_IRQHandler                       0x00000cc4   Section        0  portserial.o(i.UART0_IRQHandler)
+    i.UART_Open                              0x00000cf0   Section        0  uart.o(i.UART_Open)
+    i.__ARM_common_switch8                   0x00000d84   Section        0  mb.o(i.__ARM_common_switch8)
+    i.__scatterload_copy                     0x00000d9e   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000dac   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000dae   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.crc_ccitt                              0x00000dbc   Section        0  mbcrc.o(i.crc_ccitt)
+    i.eBTFuncReadHoldingRegister             0x00000de8   Section        0  btfunc.o(i.eBTFuncReadHoldingRegister)
+    i.eMBEnable                              0x00000e7c   Section        0  mb.o(i.eMBEnable)
+    i.eMBFuncReadCoils                       0x00000ea4   Section        0  mbfunccoils.o(i.eMBFuncReadCoils)
+    i.eMBFuncReadDiscreteInputs              0x00000f62   Section        0  mbfuncdisc.o(i.eMBFuncReadDiscreteInputs)
+    i.eMBFuncReadHoldingRegister             0x0000101e   Section        0  mbfuncholding.o(i.eMBFuncReadHoldingRegister)
+    i.eMBFuncReadInputRegister               0x000010aa   Section        0  mbfuncinput.o(i.eMBFuncReadInputRegister)
+    i.eMBFuncReadWriteMultipleHoldingRegister 0x00001136   Section        0  mbfuncholding.o(i.eMBFuncReadWriteMultipleHoldingRegister)
+    i.eMBFuncReportSlaveID                   0x00001220   Section        0  mbfuncother.o(i.eMBFuncReportSlaveID)
+    i.eMBFuncWriteCoil                       0x00001248   Section        0  mbfunccoils.o(i.eMBFuncWriteCoil)
+    i.eMBFuncWriteHoldingRegister            0x000012b8   Section        0  mbfuncholding.o(i.eMBFuncWriteHoldingRegister)
+    i.eMBFuncWriteMultipleCoils              0x000012f8   Section        0  mbfunccoils.o(i.eMBFuncWriteMultipleCoils)
+    i.eMBFuncWriteMultipleHoldingRegister    0x00001390   Section        0  mbfuncholding.o(i.eMBFuncWriteMultipleHoldingRegister)
+    i.eMBInit                                0x000013fc   Section        0  mb.o(i.eMBInit)
+    i.eMBPoll                                0x000014c8   Section        0  mb.o(i.eMBPoll)
+    i.eMBRTUInit                             0x000016d8   Section        0  mbrtu.o(i.eMBRTUInit)
+    i.eMBRTUReceive                          0x0000172c   Section        0  mbrtu.o(i.eMBRTUReceive)
+    i.eMBRTUSend                             0x00001798   Section        0  mbrtu.o(i.eMBRTUSend)
+    i.eMBRTUStart                            0x00001820   Section        0  mbrtu.o(i.eMBRTUStart)
+    i.eMBRTUStop                             0x00001844   Section        0  mbrtu.o(i.eMBRTUStop)
+    i.eMBRegCoilsCB                          0x0000185c   Section        0  user_mb_app.o(i.eMBRegCoilsCB)
+    i.eMBRegDiscreteCB                       0x000019b8   Section        0  user_mb_app.o(i.eMBRegDiscreteCB)
+    i.eMBRegHoldingCB                        0x00001b08   Section        0  user_mb_app.o(i.eMBRegHoldingCB)
+    i.eMBRegInputCB                          0x00001bc8   Section        0  user_mb_app.o(i.eMBRegInputCB)
+    i.main                                   0x00001c70   Section        0  main.o(i.main)
+    i.peBTFrameSendCur                       0x00001cd0   Section        0  mbrtu.o(i.peBTFrameSendCur)
+    i.prveMBError2Exception                  0x00001db0   Section        0  mbutils.o(i.prveMBError2Exception)
+    i.prvvTIMERExpiredISR                    0x00001dd4   Section        0  porttimer.o(i.prvvTIMERExpiredISR)
+    prvvTIMERExpiredISR                      0x00001dd5   Thumb Code    10  porttimer.o(i.prvvTIMERExpiredISR)
+    i.prvvUARTRxISR                          0x00001de4   Section        0  portserial.o(i.prvvUARTRxISR)
+    prvvUARTRxISR                            0x00001de5   Thumb Code    10  portserial.o(i.prvvUARTRxISR)
+    i.prvvUARTTxReadyISR                     0x00001df4   Section        0  portserial.o(i.prvvUARTTxReadyISR)
+    prvvUARTTxReadyISR                       0x00001df5   Thumb Code    10  portserial.o(i.prvvUARTTxReadyISR)
+    i.ucMBMasterGetDestAddress               0x00001e04   Section        0  user_mb_app.o(i.ucMBMasterGetDestAddress)
+    i.usMBCRC16                              0x00001e08   Section        0  mbcrc.o(i.usMBCRC16)
+    i.vMBPortSerialEnable                    0x00001e3c   Section        0  portserial.o(i.vMBPortSerialEnable)
+    i.vMBPortTimersDisable                   0x00001e80   Section        0  porttimer.o(i.vMBPortTimersDisable)
+    i.vMBPortTimersEnable                    0x00001e94   Section        0  porttimer.o(i.vMBPortTimersEnable)
+    i.xMBMasterGetCBRunInMasterMode          0x00001eac   Section        0  user_mb_app.o(i.xMBMasterGetCBRunInMasterMode)
+    i.xMBPortEventGet                        0x00001eb0   Section        0  portevent.o(i.xMBPortEventGet)
+    i.xMBPortEventInit                       0x00001ed4   Section        0  portevent.o(i.xMBPortEventInit)
+    i.xMBPortEventPost                       0x00001ee4   Section        0  portevent.o(i.xMBPortEventPost)
+    i.xMBPortSerialGetByte                   0x00001ef8   Section        0  portserial.o(i.xMBPortSerialGetByte)
+    i.xMBPortSerialInit                      0x00001f08   Section        0  portserial.o(i.xMBPortSerialInit)
+    i.xMBPortSerialPutByte                   0x00001f70   Section        0  portserial.o(i.xMBPortSerialPutByte)
+    i.xMBPortTimersInit                      0x00001f80   Section        0  porttimer.o(i.xMBPortTimersInit)
+    i.xMBRTUReceiveFSM                       0x00001fe0   Section        0  mbrtu.o(i.xMBRTUReceiveFSM)
+    i.xMBRTUTimerT35Expired                  0x00002070   Section        0  mbrtu.o(i.xMBRTUTimerT35Expired)
+    i.xMBRTUTransmitFSM                      0x000020b4   Section        0  mbrtu.o(i.xMBRTUTransmitFSM)
+    i.xMBUtilGetBits                         0x00002124   Section        0  mbutils.o(i.xMBUtilGetBits)
+    i.xMBUtilSetBits                         0x00002152   Section        0  mbutils.o(i.xMBUtilSetBits)
+    .constdata                               0x000021a2   Section     1024  mbcrc.o(.constdata)
+    aucCRCHi                                 0x000021a2   Data         256  mbcrc.o(.constdata)
+    aucCRCLo                                 0x000022a2   Data         256  mbcrc.o(.constdata)
+    ccitt_table                              0x000023a2   Data         512  mbcrc.o(.constdata)
+    .constdata                               0x000025a4   Section       32  timer.o(.constdata)
+    .constdata                               0x000025c4   Section       48  uart.o(.constdata)
+    .constdata                               0x000025f4   Section       32  system_m051series.o(.constdata)
+    .constdata                               0x00002614   Section       10  display.o(.constdata)
+    .data                                    0x20000000   Section        5  main.o(.data)
+    u32InitCount                             0x20000000   Data           4  main.o(.data)
+    .data                                    0x20000005   Section        2  portevent.o(.data)
+    eQueuedEvent                             0x20000005   Data           1  portevent.o(.data)
+    xEventInQueue                            0x20000006   Data           1  portevent.o(.data)
+    .data                                    0x20000008   Section       10  porttimer.o(.data)
+    MBTimerout50us                           0x20000010   Data           2  porttimer.o(.data)
+    .data                                    0x20000014   Section       34  user_mb_app.o(.data)
+    .data                                    0x20000038   Section       12  mbrtu.o(.data)
+    eSndState                                0x20000038   Data           1  mbrtu.o(.data)
+    eRcvState                                0x20000039   Data           1  mbrtu.o(.data)
+    pucSndBufferCur                          0x2000003c   Data           4  mbrtu.o(.data)
+    usSndBufferCount                         0x20000040   Data           2  mbrtu.o(.data)
+    usRcvBufferPos                           0x20000042   Data           2  mbrtu.o(.data)
+    .data                                    0x20000044   Section        2  mbfuncother.o(.data)
+    usMBSlaveIDLen                           0x20000044   Data           2  mbfuncother.o(.data)
+    .data                                    0x20000048   Section      184  mb.o(.data)
+    eMBState                                 0x20000048   Data           1  mb.o(.data)
+    xFuncHandlers                            0x2000004c   Data         128  mb.o(.data)
+    ucMBFrame                                0x200000cc   Data           4  mb.o(.data)
+    ucRcvAddress                             0x200000d0   Data           1  mb.o(.data)
+    ucFunctionCode                           0x200000d1   Data           1  mb.o(.data)
+    usLength                                 0x200000d2   Data           2  mb.o(.data)
+    eException                               0x200000d4   Data           1  mb.o(.data)
+    ucMBAddress                              0x200000d5   Data           1  mb.o(.data)
+    eMBCurrentMode                           0x200000d6   Data           1  mb.o(.data)
+    peMBFrameSendCur                         0x200000d8   Data           4  mb.o(.data)
+    pvMBFrameStartCur                        0x200000dc   Data           4  mb.o(.data)
+    pvMBFrameStopCur                         0x200000e0   Data           4  mb.o(.data)
+    peMBFrameReceiveCur                      0x200000e4   Data           4  mb.o(.data)
+    pvMBFrameCloseCur                        0x200000e8   Data           4  mb.o(.data)
+    .data                                    0x20000100   Section       12  system_m051series.o(.data)
+    .data                                    0x2000010c   Section       38  display.o(.data)
+    DG1number                                0x2000010c   Data           1  display.o(.data)
+    DG2number                                0x2000010d   Data           1  display.o(.data)
+    DG3number                                0x2000010e   Data           1  display.o(.data)
+    DG4number                                0x2000010f   Data           1  display.o(.data)
+    LastValue                                0x20000114   Data           4  display.o(.data)
+    Arlm                                     0x20000118   Data           1  display.o(.data)
+    ButtonNum                                0x20000119   Data           1  display.o(.data)
+    Continuous                               0x2000011a   Data           1  display.o(.data)
+    time                                     0x2000011c   Data           4  display.o(.data)
+    time1                                    0x20000120   Data           4  display.o(.data)
+    n                                        0x20000124   Data           4  display.o(.data)
+    count                                    0x20000128   Data           1  display.o(.data)
+    .bss                                     0x20000134   Section      608  user_mb_app.o(.bss)
+    .bss                                     0x20000394   Section      256  mbrtu.o(.bss)
+    .bss                                     0x20000494   Section       32  mbfuncother.o(.bss)
+    ucMBSlaveID                              0x20000494   Data          32  mbfuncother.o(.bss)
+    STACK                                    0x200004b8   Section      512  startup_m051series.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_m051series.o(RESET)
+    _printf_a                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_c                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_charcount                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_d                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_e                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_f                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_flags                            0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_dec                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_fp_hex                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_g                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_i                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_int_dec                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_l                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ll                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lld                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_lli                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llo                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llu                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_llx                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_dec                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_hex                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_longlong_oct                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_ls                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_mbtowc                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_n                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_o                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_p                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_percent                          0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_pre_padding                      0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_return_value                     0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_s                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_sizespec                         0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_str                              0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_signed                  0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_truncate_unsigned                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_u                                0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wc                               0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_wctomb                           0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_widthprec                        0x00000000   Number         0  stubs.o ABSOLUTE
+    _printf_x                                0x00000000   Number         0  stubs.o ABSOLUTE
+    __main                                   0x000000c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_init                               0x000000c9   Thumb Code     0  entry7.o(.ARM.Collect$$$$00000007)
+    Reset_Handler                            0x000000d5   Thumb Code    32  startup_m051series.o(.text)
+    NMI_Handler                              0x000000f5   Thumb Code     2  startup_m051series.o(.text)
+    HardFault_Handler                        0x000000f7   Thumb Code     2  startup_m051series.o(.text)
+    SVC_Handler                              0x000000f9   Thumb Code     2  startup_m051series.o(.text)
+    PendSV_Handler                           0x000000fb   Thumb Code     2  startup_m051series.o(.text)
+    SysTick_Handler                          0x000000fd   Thumb Code     2  startup_m051series.o(.text)
+    ACMP01_IRQHandler                        0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    ACMP23_IRQHandler                        0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    ADC_IRQHandler                           0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    BOD_IRQHandler                           0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    GPIOP0P1_IRQHandler                      0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    I2C0_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    I2C1_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    PWMA_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    PWMB_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    PWRWU_IRQHandler                         0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    RTC_IRQHandler                           0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    SPI0_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    SPI1_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    TMR0_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    TMR2_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    TMR3_IRQHandler                          0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    UART1_IRQHandler                         0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    WDT_IRQHandler                           0x000000ff   Thumb Code     0  startup_m051series.o(.text)
+    __aeabi_uidiv                            0x00000121   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x00000121   Thumb Code    44  uidiv.o(.text)
+    __aeabi_idiv                             0x0000014d   Thumb Code     0  idiv.o(.text)
+    __aeabi_idivmod                          0x0000014d   Thumb Code    40  idiv.o(.text)
+    __aeabi_memcpy                           0x00000175   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x00000175   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x00000175   Thumb Code     0  memcpya.o(.text)
+    __scatterload                            0x00000199   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000199   Thumb Code     0  init.o(.text)
+    __decompress                             0x000001bd   Thumb Code     0  __dczerorl2.o(.text)
+    __decompress1                            0x000001bd   Thumb Code    88  __dczerorl2.o(.text)
+    BuzzePoll                                0x00000215   Thumb Code    26  display.o(i.BuzzePoll)
+    CLK_EnableModuleClock                    0x00000235   Thumb Code    28  clk.o(i.CLK_EnableModuleClock)
+    CLK_SetModuleClock                       0x0000034d   Thumb Code    88  clk.o(i.CLK_SetModuleClock)
+    CLK_WaitClockReady                       0x000003a9   Thumb Code    28  clk.o(i.CLK_WaitClockReady)
+    CountPoll                                0x000003cd   Thumb Code   130  display.o(i.CountPoll)
+    DisplayHWInit                            0x00000459   Thumb Code    66  display.o(i.DisplayHWInit)
+    DisplayPoll                              0x000004a9   Thumb Code   168  display.o(i.DisplayPoll)
+    DisplayScan                              0x00000561   Thumb Code    22  display.o(i.DisplayScan)
+    EINT0_IRQHandler                         0x0000057d   Thumb Code    90  display.o(i.EINT0_IRQHandler)
+    EINT1_IRQHandler                         0x000005ed   Thumb Code     8  display.o(i.EINT1_IRQHandler)
+    EnterCriticalSection                     0x000005f9   Thumb Code     4  port.o(i.EnterCriticalSection)
+    ExitCriticalSection                      0x000005fd   Thumb Code     4  port.o(i.ExitCriticalSection)
+    FMC_Open                                 0x00000601   Thumb Code    14  fmc.o(i.FMC_Open)
+    GPIOP2P3P4_IRQHandler                    0x0000063d   Thumb Code    14  display.o(i.GPIOP2P3P4_IRQHandler)
+    GPIO_EnableInt                           0x00000651   Thumb Code    26  gpio.o(i.GPIO_EnableInt)
+    GPIO_SetMode                             0x0000066b   Thumb Code    42  gpio.o(i.GPIO_SetMode)
+    GetFlash                                 0x00000695   Thumb Code    20  display.o(i.GetFlash)
+    RotaryEncoderHWinit                      0x000007b1   Thumb Code   128  display.o(i.RotaryEncoderHWinit)
+    SYS_Init                                 0x00000835   Thumb Code    94  main.o(i.SYS_Init)
+    SYS_ResetModule                          0x000008a5   Thumb Code    44  sys.o(i.SYS_ResetModule)
+    SaveFlash                                0x000008d5   Thumb Code   114  display.o(i.SaveFlash)
+    SetBuzzer                                0x00000951   Thumb Code    20  display.o(i.SetBuzzer)
+    SetNumber                                0x00000969   Thumb Code    42  display.o(i.SetNumber)
+    SystemCoreClockUpdate                    0x00000999   Thumb Code    76  system_m051series.o(i.SystemCoreClockUpdate)
+    SystemInit                               0x000009fd   Thumb Code     2  system_m051series.o(i.SystemInit)
+    TIMER_GetModuleClock                     0x00000a01   Thumb Code   110  timer.o(i.TIMER_GetModuleClock)
+    TIMER_Open                               0x00000a85   Thumb Code   116  timer.o(i.TIMER_Open)
+    TMR1_IRQHandler                          0x00000af9   Thumb Code    78  porttimer.o(i.TMR1_IRQHandler)
+    TimeDec                                  0x00000b59   Thumb Code    76  display.o(i.TimeDec)
+    TimeInit                                 0x00000bb1   Thumb Code    78  display.o(i.TimeInit)
+    TimeRunHook                              0x00000c0d   Thumb Code   144  display.o(i.TimeRunHook)
+    Timetick50us                             0x00000ca5   Thumb Code    28  display.o(i.Timetick50us)
+    UART0_IRQHandler                         0x00000cc5   Thumb Code    38  portserial.o(i.UART0_IRQHandler)
+    UART_Open                                0x00000cf1   Thumb Code   132  uart.o(i.UART_Open)
+    __ARM_common_switch8                     0x00000d85   Thumb Code    26  mb.o(i.__ARM_common_switch8)
+    __scatterload_copy                       0x00000d9f   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000dad   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000daf   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    crc_ccitt                                0x00000dbd   Thumb Code    40  mbcrc.o(i.crc_ccitt)
+    eBTFuncReadHoldingRegister               0x00000de9   Thumb Code   148  btfunc.o(i.eBTFuncReadHoldingRegister)
+    eMBEnable                                0x00000e7d   Thumb Code    34  mb.o(i.eMBEnable)
+    eMBFuncReadCoils                         0x00000ea5   Thumb Code   190  mbfunccoils.o(i.eMBFuncReadCoils)
+    eMBFuncReadDiscreteInputs                0x00000f63   Thumb Code   188  mbfuncdisc.o(i.eMBFuncReadDiscreteInputs)
+    eMBFuncReadHoldingRegister               0x0000101f   Thumb Code   140  mbfuncholding.o(i.eMBFuncReadHoldingRegister)
+    eMBFuncReadInputRegister                 0x000010ab   Thumb Code   140  mbfuncinput.o(i.eMBFuncReadInputRegister)
+    eMBFuncReadWriteMultipleHoldingRegister  0x00001137   Thumb Code   234  mbfuncholding.o(i.eMBFuncReadWriteMultipleHoldingRegister)
+    eMBFuncReportSlaveID                     0x00001221   Thumb Code    30  mbfuncother.o(i.eMBFuncReportSlaveID)
+    eMBFuncWriteCoil                         0x00001249   Thumb Code   112  mbfunccoils.o(i.eMBFuncWriteCoil)
+    eMBFuncWriteHoldingRegister              0x000012b9   Thumb Code    64  mbfuncholding.o(i.eMBFuncWriteHoldingRegister)
+    eMBFuncWriteMultipleCoils                0x000012f9   Thumb Code   152  mbfunccoils.o(i.eMBFuncWriteMultipleCoils)
+    eMBFuncWriteMultipleHoldingRegister      0x00001391   Thumb Code   108  mbfuncholding.o(i.eMBFuncWriteMultipleHoldingRegister)
+    eMBInit                                  0x000013fd   Thumb Code   158  mb.o(i.eMBInit)
+    eMBPoll                                  0x000014c9   Thumb Code   522  mb.o(i.eMBPoll)
+    eMBRTUInit                               0x000016d9   Thumb Code    80  mbrtu.o(i.eMBRTUInit)
+    eMBRTUReceive                            0x0000172d   Thumb Code    98  mbrtu.o(i.eMBRTUReceive)
+    eMBRTUSend                               0x00001799   Thumb Code   128  mbrtu.o(i.eMBRTUSend)
+    eMBRTUStart                              0x00001821   Thumb Code    30  mbrtu.o(i.eMBRTUStart)
+    eMBRTUStop                               0x00001845   Thumb Code    24  mbrtu.o(i.eMBRTUStop)
+    eMBRegCoilsCB                            0x0000185d   Thumb Code   332  user_mb_app.o(i.eMBRegCoilsCB)
+    eMBRegDiscreteCB                         0x000019b9   Thumb Code   318  user_mb_app.o(i.eMBRegDiscreteCB)
+    eMBRegHoldingCB                          0x00001b09   Thumb Code   176  user_mb_app.o(i.eMBRegHoldingCB)
+    eMBRegInputCB                            0x00001bc9   Thumb Code   150  user_mb_app.o(i.eMBRegInputCB)
+    main                                     0x00001c71   Thumb Code    88  main.o(i.main)
+    peBTFrameSendCur                         0x00001cd1   Thumb Code   216  mbrtu.o(i.peBTFrameSendCur)
+    prveMBError2Exception                    0x00001db1   Thumb Code    36  mbutils.o(i.prveMBError2Exception)
+    ucMBMasterGetDestAddress                 0x00001e05   Thumb Code     4  user_mb_app.o(i.ucMBMasterGetDestAddress)
+    usMBCRC16                                0x00001e09   Thumb Code    44  mbcrc.o(i.usMBCRC16)
+    vMBPortSerialEnable                      0x00001e3d   Thumb Code    62  portserial.o(i.vMBPortSerialEnable)
+    vMBPortTimersDisable                     0x00001e81   Thumb Code    12  porttimer.o(i.vMBPortTimersDisable)
+    vMBPortTimersEnable                      0x00001e95   Thumb Code    14  porttimer.o(i.vMBPortTimersEnable)
+    xMBMasterGetCBRunInMasterMode            0x00001ead   Thumb Code     4  user_mb_app.o(i.xMBMasterGetCBRunInMasterMode)
+    xMBPortEventGet                          0x00001eb1   Thumb Code    30  portevent.o(i.xMBPortEventGet)
+    xMBPortEventInit                         0x00001ed5   Thumb Code    10  portevent.o(i.xMBPortEventInit)
+    xMBPortEventPost                         0x00001ee5   Thumb Code    16  portevent.o(i.xMBPortEventPost)
+    xMBPortSerialGetByte                     0x00001ef9   Thumb Code    12  portserial.o(i.xMBPortSerialGetByte)
+    xMBPortSerialInit                        0x00001f09   Thumb Code    88  portserial.o(i.xMBPortSerialInit)
+    xMBPortSerialPutByte                     0x00001f71   Thumb Code    10  portserial.o(i.xMBPortSerialPutByte)
+    xMBPortTimersInit                        0x00001f81   Thumb Code    80  porttimer.o(i.xMBPortTimersInit)
+    xMBRTUReceiveFSM                         0x00001fe1   Thumb Code   134  mbrtu.o(i.xMBRTUReceiveFSM)
+    xMBRTUTimerT35Expired                    0x00002071   Thumb Code    62  mbrtu.o(i.xMBRTUTimerT35Expired)
+    xMBRTUTransmitFSM                        0x000020b5   Thumb Code   106  mbrtu.o(i.xMBRTUTransmitFSM)
+    xMBUtilGetBits                           0x00002125   Thumb Code    46  mbutils.o(i.xMBUtilGetBits)
+    xMBUtilSetBits                           0x00002153   Thumb Code    80  mbutils.o(i.xMBUtilSetBits)
+    gau32ClkSrcTbl                           0x000025f4   Data          32  system_m051series.o(.constdata)
+    NumberTab                                0x00002614   Data          10  display.o(.constdata)
+    Region$$Table$$Base                      0x00002620   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00002640   Number         0  anon$$obj.o(Region$$Table)
+    SlaveAddr                                0x20000004   Data           1  main.o(.data)
+    Timehandel                               0x20000008   Data           1  porttimer.o(.data)
+    timecut                                  0x2000000c   Data           4  porttimer.o(.data)
+    usSDiscInStart                           0x20000014   Data           2  user_mb_app.o(.data)
+    usSCoilStart                             0x20000016   Data           2  user_mb_app.o(.data)
+    usSRegInStart                            0x20000018   Data           2  user_mb_app.o(.data)
+    usSRegHoldStart                          0x2000001a   Data           2  user_mb_app.o(.data)
+    usMDiscInStart                           0x2000001c   Data           2  user_mb_app.o(.data)
+    usMCoilStart                             0x2000001e   Data           2  user_mb_app.o(.data)
+    usMRegInStart                            0x20000020   Data           2  user_mb_app.o(.data)
+    usMRegHoldStart                          0x20000022   Data           2  user_mb_app.o(.data)
+    Slave_ucSDiscInBuf                       0x20000024   Data           4  user_mb_app.o(.data)
+    Slave_ucSCoilBuf                         0x20000028   Data           4  user_mb_app.o(.data)
+    Slave_usSRegInBuf                        0x2000002c   Data           4  user_mb_app.o(.data)
+    Slave_usSRegHoldBuf                      0x20000030   Data           4  user_mb_app.o(.data)
+    ucSDiscInBuf                             0x20000034   Data           1  user_mb_app.o(.data)
+    ucSCoilBuf                               0x20000035   Data           1  user_mb_app.o(.data)
+    pxMBFrameCBByteReceived                  0x200000ec   Data           4  mb.o(.data)
+    pxMBFrameCBTransmitterEmpty              0x200000f0   Data           4  mb.o(.data)
+    pxMBPortCBTimerExpired                   0x200000f4   Data           4  mb.o(.data)
+    pxMBFrameCBReceiveFSMCur                 0x200000f8   Data           4  mb.o(.data)
+    pxMBFrameCBTransmitFSMCur                0x200000fc   Data           4  mb.o(.data)
+    SystemCoreClock                          0x20000100   Data           4  system_m051series.o(.data)
+    CyclesPerUs                              0x20000104   Data           4  system_m051series.o(.data)
+    PllClock                                 0x20000108   Data           4  system_m051series.o(.data)
+    TimeCount                                0x20000110   Data           4  display.o(.data)
+    flash                                    0x2000012c   Data           4  display.o(.data)
+    Trg                                      0x20000130   Data           1  display.o(.data)
+    Cont                                     0x20000131   Data           1  display.o(.data)
+    usSRegInBuf                              0x20000134   Data          16  user_mb_app.o(.bss)
+    usSRegHoldBuf                            0x20000144   Data          48  user_mb_app.o(.bss)
+    ucMDiscInBuf                             0x20000174   Data          16  user_mb_app.o(.bss)
+    ucMCoilBuf                               0x20000184   Data          16  user_mb_app.o(.bss)
+    usMRegInBuf                              0x20000194   Data         256  user_mb_app.o(.bss)
+    usMRegHoldBuf                            0x20000294   Data         256  user_mb_app.o(.bss)
+    ucRTUBuf                                 0x20000394   Data         256  mbrtu.o(.bss)
+    __initial_sp                             0x200006b8   Data           0  startup_m051series.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000d5
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00002774, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x0000269c])
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x00002640, Max: 0x00010000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000c0   Data   RO         1880    RESET               startup_m051series.o
+    0x000000c0   0x00000000   Code   RO         2144  * .ARM.Collect$$$$00000000  entry.o(mc_p.l)
+    0x000000c0   0x00000004   Code   RO         2156    .ARM.Collect$$$$00000001  entry2.o(mc_p.l)
+    0x000000c4   0x00000004   Code   RO         2159    .ARM.Collect$$$$00000004  entry5.o(mc_p.l)
+    0x000000c8   0x00000008   Code   RO         2160    .ARM.Collect$$$$00000007  entry7.o(mc_p.l)
+    0x000000d0   0x00000004   Code   RO         2157    .ARM.Collect$$$$00002712  entry2.o(mc_p.l)
+    0x000000d4   0x0000004c   Code   RO         1881  * .text               startup_m051series.o
+    0x00000120   0x0000002c   Code   RO         2147    .text               uidiv.o(mc_p.l)
+    0x0000014c   0x00000028   Code   RO         2149    .text               idiv.o(mc_p.l)
+    0x00000174   0x00000024   Code   RO         2151    .text               memcpya.o(mc_p.l)
+    0x00000198   0x00000024   Code   RO         2161    .text               init.o(mc_p.l)
+    0x000001bc   0x00000058   Code   RO         2171    .text               __dczerorl2.o(mc_p.l)
+    0x00000214   0x00000020   Code   RO         1998    i.BuzzePoll         display.o
+    0x00000234   0x00000020   Code   RO          811    i.CLK_EnableModuleClock  clk.o
+    0x00000254   0x0000007c   Code   RO         1723    i.CLK_GetPLLClockFreq  uart.o
+    0x000002d0   0x0000007c   Code   RO         1888    i.CLK_GetPLLClockFreq  system_m051series.o
+    0x0000034c   0x0000005c   Code   RO          822    i.CLK_SetModuleClock  clk.o
+    0x000003a8   0x00000024   Code   RO          824    i.CLK_WaitClockReady  clk.o
+    0x000003cc   0x0000008c   Code   RO         1999    i.CountPoll         display.o
+    0x00000458   0x00000050   Code   RO         2000    i.DisplayHWInit     display.o
+    0x000004a8   0x000000b8   Code   RO         2001    i.DisplayPoll       display.o
+    0x00000560   0x0000001c   Code   RO         2002    i.DisplayScan       display.o
+    0x0000057c   0x00000070   Code   RO         2003    i.EINT0_IRQHandler  display.o
+    0x000005ec   0x0000000c   Code   RO         2004    i.EINT1_IRQHandler  display.o
+    0x000005f8   0x00000004   Code   RO          155    i.EnterCriticalSection  port.o
+    0x000005fc   0x00000004   Code   RO          156    i.ExitCriticalSection  port.o
+    0x00000600   0x00000014   Code   RO          976    i.FMC_Open          fmc.o
+    0x00000614   0x00000028   Code   RO         2005    i.FMC_Read          display.o
+    0x0000063c   0x00000014   Code   RO         2006    i.GPIOP2P3P4_IRQHandler  display.o
+    0x00000650   0x0000001a   Code   RO         1069    i.GPIO_EnableInt    gpio.o
+    0x0000066a   0x0000002a   Code   RO         1070    i.GPIO_SetMode      gpio.o
+    0x00000694   0x00000018   Code   RO         2007    i.GetFlash          display.o
+    0x000006ac   0x00000014   Code   RO         2010    i.NVIC_EnableIRQ    display.o
+    0x000006c0   0x00000078   Code   RO          211    i.NVIC_SetPriority  portserial.o
+    0x00000738   0x00000078   Code   RO          292    i.NVIC_SetPriority  porttimer.o
+    0x000007b0   0x00000084   Code   RO         2011    i.RotaryEncoderHWinit  display.o
+    0x00000834   0x00000070   Code   RO            4    i.SYS_Init          main.o
+    0x000008a4   0x00000030   Code   RO         1595    i.SYS_ResetModule   sys.o
+    0x000008d4   0x0000007c   Code   RO         2012    i.SaveFlash         display.o
+    0x00000950   0x00000018   Code   RO         2013    i.SetBuzzer         display.o
+    0x00000968   0x00000030   Code   RO         2014    i.SetNumber         display.o
+    0x00000998   0x00000064   Code   RO         1889    i.SystemCoreClockUpdate  system_m051series.o
+    0x000009fc   0x00000002   Code   RO         1890    i.SystemInit        system_m051series.o
+    0x000009fe   0x00000002   PAD
+    0x00000a00   0x00000084   Code   RO         1666    i.TIMER_GetModuleClock  timer.o
+    0x00000a84   0x00000074   Code   RO         1667    i.TIMER_Open        timer.o
+    0x00000af8   0x00000060   Code   RO          293    i.TMR1_IRQHandler   porttimer.o
+    0x00000b58   0x00000058   Code   RO         2015    i.TimeDec           display.o
+    0x00000bb0   0x0000005c   Code   RO         2016    i.TimeInit          display.o
+    0x00000c0c   0x00000098   Code   RO         2017    i.TimeRunHook       display.o
+    0x00000ca4   0x00000020   Code   RO         2018    i.Timetick50us      display.o
+    0x00000cc4   0x0000002c   Code   RO          212    i.UART0_IRQHandler  portserial.o
+    0x00000cf0   0x00000094   Code   RO         1732    i.UART_Open         uart.o
+    0x00000d84   0x0000001a   Code   RO          716    i.__ARM_common_switch8  mb.o
+    0x00000d9e   0x0000000e   Code   RO         2165    i.__scatterload_copy  handlers.o(mc_p.l)
+    0x00000dac   0x00000002   Code   RO         2166    i.__scatterload_null  handlers.o(mc_p.l)
+    0x00000dae   0x0000000e   Code   RO         2167    i.__scatterload_zeroinit  handlers.o(mc_p.l)
+    0x00000dbc   0x0000002c   Code   RO          393    i.crc_ccitt         mbcrc.o
+    0x00000de8   0x00000094   Code   RO          505    i.eBTFuncReadHoldingRegister  btfunc.o
+    0x00000e7c   0x00000028   Code   RO          676    i.eMBEnable         mb.o
+    0x00000ea4   0x000000be   Code   RO          523    i.eMBFuncReadCoils  mbfunccoils.o
+    0x00000f62   0x000000bc   Code   RO          550    i.eMBFuncReadDiscreteInputs  mbfuncdisc.o
+    0x0000101e   0x0000008c   Code   RO          562    i.eMBFuncReadHoldingRegister  mbfuncholding.o
+    0x000010aa   0x0000008c   Code   RO          592    i.eMBFuncReadInputRegister  mbfuncinput.o
+    0x00001136   0x000000ea   Code   RO          563    i.eMBFuncReadWriteMultipleHoldingRegister  mbfuncholding.o
+    0x00001220   0x00000028   Code   RO          606    i.eMBFuncReportSlaveID  mbfuncother.o
+    0x00001248   0x00000070   Code   RO          524    i.eMBFuncWriteCoil  mbfunccoils.o
+    0x000012b8   0x00000040   Code   RO          564    i.eMBFuncWriteHoldingRegister  mbfuncholding.o
+    0x000012f8   0x00000098   Code   RO          525    i.eMBFuncWriteMultipleCoils  mbfunccoils.o
+    0x00001390   0x0000006c   Code   RO          565    i.eMBFuncWriteMultipleHoldingRegister  mbfuncholding.o
+    0x000013fc   0x000000cc   Code   RO          677    i.eMBInit           mb.o
+    0x000014c8   0x00000210   Code   RO          678    i.eMBPoll           mb.o
+    0x000016d8   0x00000054   Code   RO          415    i.eMBRTUInit        mbrtu.o
+    0x0000172c   0x0000006c   Code   RO          416    i.eMBRTUReceive     mbrtu.o
+    0x00001798   0x00000088   Code   RO          417    i.eMBRTUSend        mbrtu.o
+    0x00001820   0x00000024   Code   RO          418    i.eMBRTUStart       mbrtu.o
+    0x00001844   0x00000018   Code   RO          419    i.eMBRTUStop        mbrtu.o
+    0x0000185c   0x0000015c   Code   RO          344    i.eMBRegCoilsCB     user_mb_app.o
+    0x000019b8   0x00000150   Code   RO          345    i.eMBRegDiscreteCB  user_mb_app.o
+    0x00001b08   0x000000c0   Code   RO          346    i.eMBRegHoldingCB   user_mb_app.o
+    0x00001bc8   0x000000a8   Code   RO          347    i.eMBRegInputCB     user_mb_app.o
+    0x00001c70   0x00000060   Code   RO            6    i.main              main.o
+    0x00001cd0   0x000000e0   Code   RO          420    i.peBTFrameSendCur  mbrtu.o
+    0x00001db0   0x00000024   Code   RO          635    i.prveMBError2Exception  mbutils.o
+    0x00001dd4   0x00000010   Code   RO          294    i.prvvTIMERExpiredISR  porttimer.o
+    0x00001de4   0x00000010   Code   RO          213    i.prvvUARTRxISR     portserial.o
+    0x00001df4   0x00000010   Code   RO          214    i.prvvUARTTxReadyISR  portserial.o
+    0x00001e04   0x00000004   Code   RO          348    i.ucMBMasterGetDestAddress  user_mb_app.o
+    0x00001e08   0x00000034   Code   RO          394    i.usMBCRC16         mbcrc.o
+    0x00001e3c   0x00000044   Code   RO          216    i.vMBPortSerialEnable  portserial.o
+    0x00001e80   0x00000014   Code   RO          295    i.vMBPortTimersDisable  porttimer.o
+    0x00001e94   0x00000018   Code   RO          296    i.vMBPortTimersEnable  porttimer.o
+    0x00001eac   0x00000004   Code   RO          349    i.xMBMasterGetCBRunInMasterMode  user_mb_app.o
+    0x00001eb0   0x00000024   Code   RO          176    i.xMBPortEventGet   portevent.o
+    0x00001ed4   0x00000010   Code   RO          177    i.xMBPortEventInit  portevent.o
+    0x00001ee4   0x00000014   Code   RO          178    i.xMBPortEventPost  portevent.o
+    0x00001ef8   0x00000010   Code   RO          217    i.xMBPortSerialGetByte  portserial.o
+    0x00001f08   0x00000068   Code   RO          218    i.xMBPortSerialInit  portserial.o
+    0x00001f70   0x00000010   Code   RO          219    i.xMBPortSerialPutByte  portserial.o
+    0x00001f80   0x00000060   Code   RO          297    i.xMBPortTimersInit  porttimer.o
+    0x00001fe0   0x00000090   Code   RO          421    i.xMBRTUReceiveFSM  mbrtu.o
+    0x00002070   0x00000044   Code   RO          422    i.xMBRTUTimerT35Expired  mbrtu.o
+    0x000020b4   0x00000070   Code   RO          423    i.xMBRTUTransmitFSM  mbrtu.o
+    0x00002124   0x0000002e   Code   RO          636    i.xMBUtilGetBits    mbutils.o
+    0x00002152   0x00000050   Code   RO          637    i.xMBUtilSetBits    mbutils.o
+    0x000021a2   0x00000400   Data   RO          395    .constdata          mbcrc.o
+    0x000025a2   0x00000002   PAD
+    0x000025a4   0x00000020   Data   RO         1668    .constdata          timer.o
+    0x000025c4   0x00000030   Data   RO         1740    .constdata          uart.o
+    0x000025f4   0x00000020   Data   RO         1891    .constdata          system_m051series.o
+    0x00002614   0x0000000a   Data   RO         2019    .constdata          display.o
+    0x0000261e   0x00000002   PAD
+    0x00002620   0x00000020   Data   RO         2163    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000006b8, Max: 0x00001000, ABSOLUTE, COMPRESSED[0x0000005c])
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000005   Data   RW            7    .data               main.o
+    0x20000005   0x00000002   Data   RW          179    .data               portevent.o
+    0x20000007   0x00000001   PAD
+    0x20000008   0x0000000a   Data   RW          298    .data               porttimer.o
+    0x20000012   0x00000002   PAD
+    0x20000014   0x00000022   Data   RW          351    .data               user_mb_app.o
+    0x20000036   0x00000002   PAD
+    0x20000038   0x0000000c   Data   RW          425    .data               mbrtu.o
+    0x20000044   0x00000002   Data   RW          609    .data               mbfuncother.o
+    0x20000046   0x00000002   PAD
+    0x20000048   0x000000b8   Data   RW          680    .data               mb.o
+    0x20000100   0x0000000c   Data   RW         1892    .data               system_m051series.o
+    0x2000010c   0x00000026   Data   RW         2020    .data               display.o
+    0x20000132   0x00000002   PAD
+    0x20000134   0x00000260   Zero   RW          350    .bss                user_mb_app.o
+    0x20000394   0x00000100   Zero   RW          424    .bss                mbrtu.o
+    0x20000494   0x00000020   Zero   RW          608    .bss                mbfuncother.o
+    0x200004b4   0x00000004   PAD
+    0x200004b8   0x00000200   Zero   RW         1878    STACK               startup_m051series.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       148          0          0          0          0       1425   btfunc.o
+       160         16          0          0          0       7758   clk.o
+      1384        160         10         38          0      17154   display.o
+        20          6          0          0          0        383   fmc.o
+        68          0          0          0          0       1400   gpio.o
+       208         26          0          5          0      68700   main.o
+       798         66          0        184          0       4543   mb.o
+        96         12       1024          0          0       1724   mbcrc.o
+       454          0          0          0          0       3714   mbfunccoils.o
+       188          0          0          0          0       1580   mbfuncdisc.o
+       546          0          0          0          0       4879   mbfuncholding.o
+       140          0          0          0          0       1503   mbfuncinput.o
+        40         10          0          2         32       1367   mbfuncother.o
+       936         58          0         12        256       6738   mbrtu.o
+       162          0          0          0          0       2542   mbutils.o
+         8          0          0          0          0       1629   port.o
+        72         16          0          2          0       4378   portevent.o
+       400         60          0          0          0      60559   portserial.o
+       372         68          0         10          0       5832   porttimer.o
+        76         32        192          0        512        700   startup_m051series.o
+        48          4          0          0          0        446   sys.o
+       226         42         32         12          0       2371   system_m051series.o
+       248         22         32          0          0       1732   timer.o
+       272         34         48          0          0       1696   uart.o
+      1052         68          0         34        608       7220   user_mb_app.o
+
+    ----------------------------------------------------------------------
+      8124        700       1374        308       1412     211973   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         2          0          4          9          4          3   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+        88          0          0          0          0          0   __dczerorl2.o
+         0          0          0          0          0          0   entry.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         8          4          0          0          0          0   entry7.o
+        30          0          0          0          0          0   handlers.o
+        40          0          0          0          0         72   idiv.o
+        36          8          0          0          0         68   init.o
+        36          0          0          0          0         60   memcpya.o
+        44          0          0          0          0         68   uidiv.o
+
+    ----------------------------------------------------------------------
+       294         16          0          0          0        268   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       294         16          0          0          0        268   mc_p.l
+
+    ----------------------------------------------------------------------
+       294         16          0          0          0        268   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      8418        716       1374        308       1412     208632   Grand Totals
+      8418        716       1374         92       1412     208632   ELF Image Totals (compressed)
+      8418        716       1374         92          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 9792 (   9.56kB)
+    Total RW  Size (RW Data + ZI Data)              1720 (   1.68kB)
+    Total ROM Size (Code + RO Data + RW Data)       9884 (   9.65kB)
+
+==============================================================================
+

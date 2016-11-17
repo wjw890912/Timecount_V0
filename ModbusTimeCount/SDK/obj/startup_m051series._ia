@@ -1,0 +1,1 @@
+--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I "E:\Keil\ARM\INC" -I "E:\Keil\ARM\INC\Nuvoton" --list ".\list\startup_M051Series.lst" --xref -o ".\obj\startup_M051Series.o" --depend ".\obj\startup_M051Series.d" "..\chip_lib\Device\Nuvoton\M051Series\Source\ARM\startup_M051Series.s"

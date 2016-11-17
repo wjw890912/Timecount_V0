@@ -1,0 +1,22 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\mister-wang\Desktop\ModbusTimeCount\SDK\Modbus.uvproj
+Project File Date:  10/14/2016
+
+<h2>Output:</h2>
+Build target 'TimeCount'
+compiling timecount.c...
+..\TimeCount\inc\timecount.h(8): warning:  #1-D: last line of file ends without a newline
+..\TimeCount\inc\timecount.h:   #endif
+..\TimeCount\inc\timecount.h:         ^
+..\TimeCount\inc\Display.h(16): warning:  #1-D: last line of file ends without a newline
+..\TimeCount\inc\Display.h:   #endif
+..\TimeCount\inc\Display.h:         ^
+..\TimeCount\inc\Display.h: ..\TimeCount\src\timecount.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=8418 RO-data=1374 RW-data=308 ZI-data=1412  
+FromELF: creating hex file...
+".\obj\Modbus.axf" - 0 Error(s), 2 Warning(s).
